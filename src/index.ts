@@ -43,10 +43,8 @@ app.post('/newmessage',bodyParser.json(), (req,res)=>{
     const author = mockUserDetails.find(user=>user.id === message.authorId);
     const authorName = author && author.name;
     const likes: number[] = []; 
-    
     const newMessage = {...message, authorName, likes}
     mockMessages.push(newMessage);
-    
 })
 
 app.post('/setlike',bodyParser.json(), (req,res)=>{
@@ -67,7 +65,6 @@ app.post('/setlike',bodyParser.json(), (req,res)=>{
         }else{
            msg[0]?.likes.push(userId) 
         }
-        
     // console.log(msg[0]?.likes);
     
 })
